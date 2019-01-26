@@ -2,13 +2,13 @@
 
 이름 : 신 준 혁 (j.h.shin)
 
-학교 : 경희대학교 (KyungHee univ
+학교 : 경희대학교 (KyungHee univ.)
 
-학과 : 사회기반시스템공학과(ivil engineering)
+학과 : 사회기반시스템공학과(Civil engineering)
 
 <교육사항>
 
-<Big Data Analytic 기법을 활용한 데이터 과학자 양성과정>(2018.12.24~2019.02.27) -생산성본부(kpc),400시간 
+<Big Data Analytic 기법을 활용한 데이터 과학자 양성과정> -생산성본부(kpc),400시간(2018.12.24~2019.02.27)  
 - 현재 수업을 들으면서 오라클, Python, R 을 이용한 코딩기법으로 빅데이터 처리하고 이용하는 과정을 수강중
 
 
