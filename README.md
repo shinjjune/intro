@@ -4,7 +4,7 @@
 
 학교 : 경희대학교 (KyungHee univ
 
-학과 : 사회기반시스템공학과(civil engineering)
+학과 : 사회기반시스템공학과(ivil engineering)
 
 <교육사항>
 
