@@ -23,5 +23,29 @@
 keras이용해보자
 
 
-python 설치 -> anaconda 설치 
+python 설치 -> anaconda 설치 -> anaconda prompt 실행
+
+* 콘다 및 파이썬 패키지 업데이트
+```
+> conda update -n base conda
+> conda update --all
+```
+
+* 텐서플로 설치
+텐서플로란?
+```
+>pip install tensorflow
+```
+만약 AVX를 지원하지 않는 CPU를 사용하고 있다면 다음과 같이 1.5 버전을 설치합니다.
+```
+pip install tensorflow==1.5.0
+```
+
+jupyter notebook 환경으로 실행하자
+```
+>jupyter notebook
+```
+
+
+
 
