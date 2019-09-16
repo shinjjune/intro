@@ -57,52 +57,59 @@ Docker CE를 설치하기 전에 먼저 도커 저장소(repository)를 설정�
 저장소 설정
 오래된 버전은 이미 삭제되어 있다고 가정하고 진행합니다.
 먼저, apt 패키지를 업데이트합니다.
-
+```
 $ sudo apt-get update
+```
 apt가 HTTPS를 통해 저장소를 사용할 수 있도록 패키지를 설치합니다.
-
+```
 $ sudo apt-get install \
     apt-transport-https \
     ca-certificates \
     curl \
     gnupg-agent \
     software-properties-common
+ ```
 도커의 공식 GPG 키를 추가합니다.
-
+```
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
 fingerprint 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88에서 마지막 8자를 검색하여 fingerprint 인식 키가 있는지 확인하십시오.
-
+```
 $ sudo apt-key fingerprint 0EBFCD88
+```
 pub   rsa4096 2017-02-22 [SCEA]
       9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
 uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
 sub   rsa4096 2017-02-22 [S]
 안정화된 저장소로 설정하려면 다음 명령을 사용하세요.
 제 서버의 아키텍처가 x86_64(amd64) 임을 감안해야 했습니다.
-
+```
 $ sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
+```
 위 아키텍처가 armhf, ppc65le 390x에 따라 명령에서 arch의 값을 해당 아키텍처로 할당하셔서 실행하면 되겠습니다.
 
 도커 저장소 설정이 완료되었습니다.
 
 Docker CE 설치하기
 먼저 apt 패키지를 업데이트합니다.
-
+```
 $ sudo apt-get update
+```
 Docker CE 최신 버전을 설치합니다. 아니면 다음 단계로 가서 특정 버전을 설치하세요.
-
+```
 $ sudo apt-get install docker-ce docker-ce-cli containerd.io
-
+```
 참고로 apt-get install 또는 apt-get update 명령으로 버전을 지정하지 않고 설치 또는 업데이트를 하면 항상 최신 버전이 설치되므로 안정성 측면에서 적합하지 않을 수도 있습니다.
 
 만약 특정 버전으로 설치하려면 다음 두 단계로 진행하세요.
 
 a. 저장소에 사용 가능한 버전 리스트를 봅니다.
-
+```
 $ apt-cache madison docker-ce
+```
  docker-ce | 5:18.09.2~3-0~ubuntu-cosmic | https://download.docker.com/linux/ubuntu cosmic/stable amd64 Packages
  docker-ce | 5:18.09.2~3-0~ubuntu-bionic | https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
  docker-ce | 5:18.09.1~3-0~ubuntu-cosmic | https://download.docker.com/linux/ubuntu cosmic/stable amd64 Packages
@@ -113,12 +120,14 @@ $ apt-cache madison docker-ce
  docker-ce | 18.06.0~ce~3-0~ubuntu | https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
  docker-ce | 18.03.1~ce~3-0~ubuntu | https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
 b. 두 번째 열의 버전 문자열을 사용하여 특정 버전을 설치합니다 (예 : 5 : 18.09.1 ~ 3-0 ~ ubuntu-xenial).
-
+```
 $ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
+```
 설치된 Docker CE 버전 확인
 이제 설치가 완료되었습니다. 잘 설치되었는지 docker 명령을 통해 확인할 수 있습니다. 가장 단순하게는 버전을 보면 되겠습니다.
-
+```
 $ sudo docker version
+```
 Client:
  Version:           18.09.2
  API version:       1.39
