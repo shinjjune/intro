@@ -139,7 +139,9 @@ Server: Docker Engine - Community
   Experimental:     false
 위처럼 Client와 Server 정보가 제대로 나온다면 설치가 완료된 것입니다. 만약 아래처럼 에러 난다면 도커 소켓 연결에 문제가 있음을 뜻합니다.
 
+```
 # sudo docker version
+```
 Client:
  Version:           18.06.1-ce
  API version:       1.38
@@ -150,11 +152,12 @@ Client:
  Experimental:      false
 Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?
 그럼 아래처럼 해보세요.
-
+```
 # sudo systemctl unmask docker.service
 # sudo systemctl unmask docker.socket
 # sudo systemctl start docker.service
 # sudo docker version
+```
 (정상적으로 나오는지 확인!)
 축하합니다. Docker CE를 성공적으로 설치 완료했습니다.
 
