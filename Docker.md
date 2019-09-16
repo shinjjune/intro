@@ -110,6 +110,7 @@ a. 저장소에 사용 가능한 버전 리스트를 봅니다.
 ```
 $ apt-cache madison docker-ce
 ```
+```
  docker-ce | 5:18.09.2~3-0~ubuntu-cosmic | https://download.docker.com/linux/ubuntu cosmic/stable amd64 Packages
  docker-ce | 5:18.09.2~3-0~ubuntu-bionic | https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
  docker-ce | 5:18.09.1~3-0~ubuntu-cosmic | https://download.docker.com/linux/ubuntu cosmic/stable amd64 Packages
@@ -120,6 +121,7 @@ $ apt-cache madison docker-ce
  docker-ce | 18.06.0~ce~3-0~ubuntu | https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
  docker-ce | 18.03.1~ce~3-0~ubuntu | https://download.docker.com/linux/ubuntu bionic/stable amd64 Packages
 b. 두 번째 열의 버전 문자열을 사용하여 특정 버전을 설치합니다 (예 : 5 : 18.09.1 ~ 3-0 ~ ubuntu-xenial).
+```
 ```
 $ sudo apt-get install docker-ce=<VERSION_STRING> docker-ce-cli=<VERSION_STRING> containerd.io
 ```
