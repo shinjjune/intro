@@ -1,5 +1,7 @@
 ## 클라우드란???
 (출처: https://azure.microsoft.com/ko-kr/overview/what-is-cloud-computing/)
+
+
 IBM, MS, google...
 
 
@@ -49,3 +51,4 @@ IBM, MS, google...
 네 가지 범주로 나뉩니다. 이러한 클라우드 컴퓨팅 서비스는 중첩되어 빌드되므로 클라우드 컴퓨팅 “스택”이라고도 합니다. 
 클라우드 컴퓨팅 서비스가 무엇이고 서로 어떻게 다른지 알아두면 비즈니스 목표를 더욱 쉽게 달성할 수 있습니다.
 
+참고 포스트: https://seulkom.tistory.com/65
