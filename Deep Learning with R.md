@@ -17,6 +17,12 @@
 * 데이터셋 및 벤치마크
 * 알고리즘의 발전
 
+* classification
+* regression
+* clustering
+
+
+
 
 ### Chapter 2. 신경망 둘러보기
 
