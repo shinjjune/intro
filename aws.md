@@ -1,6 +1,8 @@
 cloudfront 
 
-* bash shell
+bash shell
+
+
 yarn build
 
 -> yarn deploy
