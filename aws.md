@@ -20,8 +20,7 @@ yarn build(혹은 npm run build)
 ![image](https://user-images.githubusercontent.com/47058441/68078735-ee7b2580-fe1f-11e9-9270-e17590e6eaac.png)
 계속 다음다음다음...
 ![image](https://user-images.githubusercontent.com/47058441/68078756-35691b00-fe20-11e9-9499-12894e64f0b1.png)
-cmd
-![image](https://user-images.githubusercontent.com/47058441/68078781-c8a25080-fe20-11e9-84c9-e306edd71572.png)
+
 
 
 
@@ -36,6 +35,8 @@ AWS Secret Access Key [None]: 비밀이에요비밀아까전에받은키여기�
 Default region name [None]: ap-northeast-2
 Default output format [None]: json
 ```
+cmd
+![image](https://user-images.githubusercontent.com/47058441/68078781-c8a25080-fe20-11e9-84c9-e306edd71572.png)
 
 ### 4. s3 설정
 ```
@@ -65,14 +66,14 @@ Default output format [None]: json
 4) $ yarn deploy
 ```
 
+### 5. cloudfront 설정
+```
+1) create distribution -> web(Get Started) -> 
+2) Origin Domain Name 에 커서를 위치시키면 만들어둔 S3 버킷이 보임 -> Viewer Protocol Policy (Redirect HTTP to HTTPS 설정) ->create distribution 
+3) 해당 ID 클릭 후 -> EDIT -> Default Root Object :index.html설정( 왜???)
+```
 
-
-
-cloudfront 
-
-bash shell
-
-
+#### 코드 업데이트 시 
 yarn build
 
 -> yarn deploy
