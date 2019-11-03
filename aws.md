@@ -17,6 +17,8 @@ yarn build(혹은 npm run build)
 3) 엑세스 키 저장 : .csv파일 다운로드
 ```
 ![image](https://user-images.githubusercontent.com/47058441/68078727-cb507600-fe1f-11e9-98b8-61b3a2c6c7cc.png)
+![image](https://user-images.githubusercontent.com/47058441/68078735-ee7b2580-fe1f-11e9-9270-e17590e6eaac.png)
+
 
 
 ### 3. AWS CLI 설치
