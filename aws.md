@@ -16,6 +16,8 @@ yarn build(혹은 npm run build)
 2) 엑세스 방식 : AmazonS3FullAccess 
 3) 엑세스 키 저장 : .csv파일 다운로드
 ```
+![image](https://user-images.githubusercontent.com/47058441/68078727-cb507600-fe1f-11e9-98b8-61b3a2c6c7cc.png)
+
 
 ### 3. AWS CLI 설치
 ```
