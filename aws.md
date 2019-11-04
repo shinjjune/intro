@@ -29,7 +29,7 @@ yarn build(혹은 npm run build)
 ### 3. AWS CLI 설치
 ```
 1)설치를 완료하셨다면, CLI 를 통하여 유저를 추가하세요.
-2) aws configure --profile myapp-s3
+2) aws configure --profile myapp
 AWS Access Key ID [None]: AKIAIGLC3EVKE3Z4JKWA
 AWS Secret Access Key [None]: 비밀이에요비밀아까전에받은키여기에입력해요그리고이건다른사람한테절대로노출되면안돼요
 Default region name [None]: ap-northeast-2
