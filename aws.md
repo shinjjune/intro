@@ -61,7 +61,7 @@ cmd
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync ./build s3://myapp --profile=myapp-s3"
+    "deploy": "aws s3 sync ./build s3://myapp --profile=myapp"
   }
 4) $ yarn deploy
 ```
