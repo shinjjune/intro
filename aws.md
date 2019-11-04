@@ -77,3 +77,6 @@ cmd
 yarn build
 
 -> yarn deploy
+
+배포:
+http://shinjh-react-news.s3-website.ap-northeast-2.amazonaws.com/
