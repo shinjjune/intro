@@ -7,6 +7,8 @@
 
 power platform (<======power BI+power Apps+power Flow(Automation))
 
-#### Powre BI service(서비스 포털)+ Power BI desktop(모델링 및 보고서 작성)+ Power BI mobile(데이터 뷰)
+#### Powre BI Service(서비스 포털)+ Power BI Desktop(모델링 및 보고서 작성)+ Power BI Mobile(데이터 뷰)
 
+클라우드 서비스
 
+import  ->  보고서 -> DB -> 공유
