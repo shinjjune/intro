@@ -16,3 +16,15 @@ power platform (<======power BI+power Apps+power Flow(Automation))
 클라우드 서비스
 
 import  ->  보고서 -> DB -> 공유
+
+
+### M language
+
+
+### DAX(Data Analysis eXpression)
+
+* power Bi 의 데이터 분석식 작성언어
+* SSAS Tabular, Excel PowerPivot, Power BI Desktop
+* Excel 함수와 유사, 더 복잡한 분석 함수 제공
+
+새 열, 새 측정값, 새 테이블...
