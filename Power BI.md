@@ -50,7 +50,7 @@ http://store.office.com/
 pibviz, pbiz 샘플보고서 참조 가능...
 
 
-#### 데이터 전처리
+### 데이터 전처리
 
 * 데이터 가져오기(.csv, .web, .excel, .sql...)
 * 데이터 변환
@@ -76,4 +76,32 @@ pibviz, pbiz 샘플보고서 참조 가능...
 5. 데이터 범주 지정
 6. 열 기준 정렬
 7. DAX(새 열, 새 측정값)
+8. 계층구조
 ```
+
+* 가져오기 분류명= related('')
+
+dax 연습 코드
+```
+1. 상위 10 = TOPN(10,SUMMARIZE('판매','분류'[분류명],'제품'[제품분류명],"매출액",[총매출금액]),[총매출금액],DESC)
+2. 서울지역매출 = FILTER('판매',RELATED('지역'[시도])="서울특별시")
+3. 서울 = CALCULATE(SUM('판매'[매출금액]), '지역'[시도] IN { "서울특별시" })
+4. 기타 = 
+        VAR __BASELINE_VALUE = CALCULATE(SUM('판매'[매출금액]), '지역'[시도] IN { "서울특별시" })
+        VAR __MEASURE_VALUE = SUM('판매'[매출금액])
+        RETURN
+	        IF(NOT ISBLANK(__MEASURE_VALUE), __MEASURE_VALUE - __BASELINE_VALUE)
+5. 기타지역매출 = CALCULATE(SUM('판매'[매출금액]),'지역'[시도]<>"서울특별시")
+6. % 분류별 매출 = DIVIDE([총매출금액],CALCULATE([총매출금액],ALL('분류'[분류명])),0)
+7. % 분류별 매출1 = DIVIDE([총매출금액],CALCULATE([총매출금액],ALLSELECTED('분류'[분류명])),0)
+8. % 거래처별 매출 = DIVIDE([총매출금액],CALCULATE([총매출금액],ALL('거래처')),0)
+9. 연간누적 = TOTALYTD([총매출금액],'날짜'[날짜])
+10. 이익률 = SUM('판매'[매출이익])/SUM('판매'[매출금액])
+11. 전년도매출 = CALCULATE([총매출금액],DATEADD('날짜'[날짜],-1,YEAR))
+
+
+```
+
+
+
+
