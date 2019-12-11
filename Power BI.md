@@ -1,6 +1,6 @@
 # Power BI
 
-<p><div color="red">"5분만에 탄성을!"</div></p>
+<h2>"5분만에 탄성을!"</h2>
 
 
 ![image](https://user-images.githubusercontent.com/47058441/70487720-a72c3700-1b39-11ea-840e-f3dd70148607.png)
