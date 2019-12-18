@@ -102,7 +102,63 @@ dax 연습 코드
 
 ```
 
-참조: power BI는 단순한 시각화 "툴" 일뿐... 결국 중요한건 데이터 모델링!!!
+
+----------------------------------------------------------------------------------------------------
+### 191218 power bi 실습 정리
+
+```
+----- 랭킹값 구하는 process----
+[‎2019-‎12-‎18 오후 4:47]  Harvey Jung:  
+1번 판매량 년단위 누적값 뽑기
+CY YTD = TOTALYTD(sum('판매데이터'[ACTUAL]),'날짜테이블'[Date]) -> 년 누적값!!!
+
+2번 작년대비 순위 학인 함수 -> 순서로 만들어줌 
+작년대비순위  = RANKX(ALL('대리점'[대리점명]), [CY YTD])
+
+3번 -> 1순위 이름 찾아내는 쿼리 
+작년대비순위1위_name = 
+VAR RK = ADDCOLUMNS(SUMMARIZE('대리점','대리점'[대리점명])
+, "RK"
+, [작년대비순위 ]
+)
+RETURN
+FILTER(FILTERS('대리점'[대리점명]),[작년대비순위 ]=1)
+
+
+4번 랭크1번 뽑기
+ACTUAL_ONE = 
+VAR rank1 = [작년대비순위1위_name]
+RETURN
+CALCULATE([CY YTD],'판매데이터'[InvoiceAccountName]=rank1)
+ 
+ 
+이 대화를 저장했습니다. 잠시 후에 비즈니스용 Skype의 [대화] 탭 및 Outlook의 [대화 내용] 폴더에서 확인할 수 있습니다. 
+[‎2019-‎12-‎18 오후 4:47]  Harvey Jung:  
+1번 판매량 년단위 누적값 뽑기
+CY YTD = TOTALYTD(sum('판매데이터'[ACTUAL]),'날짜테이블'[Date]) -> 년 누적값!!!
+
+2번 작년대비 순위 학인 함수 -> 순서로 만들어줌 
+작년대비순위  = RANKX(ALL('대리점'[대리점명]), [CY YTD])
+
+3번 -> 1순위 이름 찾아내는 쿼리 
+작년대비순위1위_name = 
+VAR RK = ADDCOLUMNS(SUMMARIZE('대리점','대리점'[대리점명])
+, "RK"
+, [작년대비순위 ]
+)
+RETURN
+FILTER(FILTERS('대리점'[대리점명]),[작년대비순위 ]=1)
+
+
+4번 랭크1번 뽑기
+ACTUAL_ONE = 
+VAR rank1 = [작년대비순위1위_name]
+RETURN
+CALCULATE([CY YTD],'판매데이터'[InvoiceAccountName]=rank1)
+
+1월,2월,3월,1분기,4월... 이런식으로 셀을 몽땅 합쳐야함. 
+
+```
 
 
 
