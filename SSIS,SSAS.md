@@ -126,3 +126,73 @@ Data Mart(쉬움)
   * 외부조인: 두 테이블 중 양쪽 한 곳이라도 존재하면 조인 결과에 나옴
   * 왼쪽 외부조인: 두 테이블 중 왼쪽에 존재하는 조인키는 무조건 결과에 나옴
   * 완전 외부조인: 두 테이블 중 양쪽 한 곳이라도 존재하면 조인 결과에 나옴
+  
+  
+  
+  ### 1. 파생 열
+
+* null 값의 치환
+* A = B + C
+* 3항 연산자 : ISNULL( [CurrencyRateID]  )?0: [CurrencyRateID] 
+
+ ###  2. 데이터변환
+
+SSIS 데이터 형식에 매우 민감함
+
+비유니코드------> 유니코드 (X)
+
+### 3. 스크립트 구성 요소
+
+- Visual C#, Visual Basic.Net(나는 못해)
+
+### 4. UNION ALL
+
+* 집합 연산의 합집합, 밑으로 붙인다.(행이 늘어난다) cf) join은 열이 늘어남
+
+### 5. 병합
+
+#### 빠른 로드
+
+- Bulk Insert
+
+#### 그냥 입력
+
+* Insert
+
+
+
+테이블 잠금: 
+
+
+
+
+
+### 제어흐름
+
+1. 결과를 받아올 필요가 없는 SQL
+2. 결과를 받아와야하는SQL
+3. ssis 변수를 이용해 sql 쿼리를 실행하는 것
+
+
+
+
+
+# SSAS
+
+일종의 데이타베이스, Data Mart->OLAP->POWER BI
+
+Power BI = SQL Server Analysis Servieces Tabular Model
+
+
+
+#### OLAP (<-->OLTP)
+
+* 사용자가 대용량 데이터를 쉽고 다양한 관점에서 추출 및 분석할 수 있도록 지원하는 비즈니스 인텔리전스(BI) 기술
+* 다차원 큐브 형태로 저장하고 측정 항목(measure)과 차원(dimensions)이라는 두 가지 기본 형태로 구분
+
+##### SSAS
+
+* OLAP 서비스를 담당하는 제품
+
+* **다차원 모델**, 테이블 형식 모델, 데이터 마이닝 구조를 가짐
+* SSDT(SQL Server Data Tools)로 개발 후 SQL Server로 배포하는 형식
