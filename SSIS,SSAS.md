@@ -196,3 +196,51 @@ Power BI = SQL Server Analysis Servieces Tabular Model
 
 * **다차원 모델**, 테이블 형식 모델, 데이터 마이닝 구조를 가짐
 * SSDT(SQL Server Data Tools)로 개발 후 SQL Server로 배포하는 형식
+
+
+## 과제
+
+* 관계만들기, 관계지정해야함 (Table->create Relationship)
+
+* 측정값 정의(분석하려고 하는 대상값)
+* 배포-> 솔루션 탐색기->power bi 실행->데이터가져오기->Analysis Service / 엑셀버튼/ 엑셀에서 데이터->데이터가져오기->데이터베이스에서->Analysis Services에서
+
+
+
+
+
+* #### 관계설정과 측정값 정의가 핵심
+
+* 데이타 변환: table -> table property-> design
+
+mysql 예제에서 가져왔다고???
+
+데이타 마트를 만드는게 목표, 테이브이 궁극적 목표(Cube)
+
+date, film filmactor, film feature ->snowflake 나머지는 star 테이블
+
+
+
+작업정의서-원본테이블보고 관계찾아내-->어떤 열로 서로 연결되어있느냐(열이름이 같아)
+
+ex) film, category, film_category
+
+role=> 주연, 조연으로 쪼개
+
+DimFilmFeature ==> 책에 있어
+
+* avgRentalDuration=>datediff이용 빌려간날짜 반납날짜 시간구하기
+
+* return class
+
+ISNULL()? A: B
+
+ISNULL() ? A :ISNULL() ? C : D
+
+* FactRental
+
+날짜키: 20191222 ---->차원테이블과의 연결 용이 날짜에서 연월일뽑아내서 합쳐서 integer로 변환
+
+
+
+데이터형식변환이슈 비유니코드-->유니코드
