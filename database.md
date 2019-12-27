@@ -31,3 +31,15 @@
 
 ![image](https://user-images.githubusercontent.com/47058441/71505367-3ff3de00-28c0-11ea-8ab8-024c8610d6dd.png)
 
+#### (2) 제 2 정규형 (2NF)
+- 부분 함수적 종속 관계를 제거해야 함
+
+![image](https://user-images.githubusercontent.com/47058441/71505403-69146e80-28c0-11ea-9c81-0cdb945a6b18.png)
+
+위 테이블에서 후보키(기본키의 후보가 될 수 있는 키)는 "종업원 + 기술" 이다. 그런데 근무지는 종업원에만
+종속적인 관게를 갖는다. 이처럼 키의 일부에만 종속적인 관계를 가지는 것을 부분 함수적 종속관계라 하며, 
+부분 함수적 종속 관계는 갱신이상 현상을 초래할 수 있다. 따라서,
+
+![image](https://user-images.githubusercontent.com/47058441/71505460-98c37680-28c0-11ea-8352-5c462b292adf.png)
+
+위와 같이 테이블을 나누어 정규화 작업을 해야한다.
