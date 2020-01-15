@@ -161,5 +161,10 @@ CALCULATE([CY YTD],'판매데이터'[InvoiceAccountName]=rank1)
 ```
 
 
+## 인턴/ 개발 시각화 자료
+
+![image](https://user-images.githubusercontent.com/47058441/72401000-3a3a3b80-378e-11ea-82f0-c68847c8415b.png)
+
+
 
 
