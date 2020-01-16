@@ -244,3 +244,28 @@ ISNULL() ? A :ISNULL() ? C : D
 
 
 데이터형식변환이슈 비유니코드-->유니코드
+
+DATEDIFF("Hh",rental_date,return_date)
+
+ActualRentalDuration > rental_duration * 24 ? "렌탈초과" : "정상"
+
+```
+int _Film_Id = 0;
+    int _row_rank = 1;
+
+public override void 입력0_ProcessInputRow(입력0Buffer Row)
+{
+    if (Row.FilmId != _Film_Id)
+    {
+        _row_rank = 1;
+        Row.rowrank = _row_rank;
+
+        _Film_Id = Row.FilmId;
+    }
+    else
+    {
+        _row_rank++;
+        Row.rowrank = _row_rank;
+    }
+}
+```
