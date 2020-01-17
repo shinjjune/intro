@@ -166,5 +166,14 @@ CALCULATE([CY YTD],'판매데이터'[InvoiceAccountName]=rank1)
 ![image](https://user-images.githubusercontent.com/47058441/72401000-3a3a3b80-378e-11ea-82f0-c68847c8415b.png)
 
 
+## 개발 시각화 자료(2020-01-17)
+![image](https://user-images.githubusercontent.com/47058441/72578021-26badc00-3918-11ea-9d90-a5466b51e99f.png)
+
+![image](https://user-images.githubusercontent.com/47058441/72578050-3a664280-3918-11ea-9557-5028b1d0a4ae.png)
+
+![image](https://user-images.githubusercontent.com/47058441/72578082-4eaa3f80-3918-11ea-92cf-ad0baf6fa9fe.png)
+
+
+
 
 
