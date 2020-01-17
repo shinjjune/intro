@@ -173,7 +173,15 @@ CALCULATE([CY YTD],'판매데이터'[InvoiceAccountName]=rank1)
 
 ![image](https://user-images.githubusercontent.com/47058441/72578082-4eaa3f80-3918-11ea-92cf-ad0baf6fa9fe.png)
 
+![image](https://user-images.githubusercontent.com/47058441/72578108-70a3c200-3918-11ea-875c-21757c6d44ca.png)
 
+![image](https://user-images.githubusercontent.com/47058441/72578121-7dc0b100-3918-11ea-9c9c-014d99e3d136.png)
+
+![image](https://user-images.githubusercontent.com/47058441/72578139-8dd89080-3918-11ea-9a7d-e788da058fad.png)
+
+
+#### 참고 : BI 사용법: 행 수준 보안(Row Level Security)
+https://m.blog.naver.com/PostView.nhn?blogId=bokyoum_kim&logNo=220896708873&proxyReferer=https%3A%2F%2Fwww.google.com%2F
 
 
 
