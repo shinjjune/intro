@@ -18,3 +18,81 @@
   * Visualgo 사이트에서 시연해보며 이해하기 (push/pop 만 클릭해보며): https://visualgo.net/en/list
   
 ![image](https://user-images.githubusercontent.com/47058441/73116752-3fae3780-3f7f-11ea-95fb-026727a0f926.png)
+
+## 2. 스택 구조와 프로세스 스택
+* 스택 구조는 프로세스 실행 구조의 가장 기본
+ * 함수 호출시 프로세스 실행 구조를 스택과 비교해서 이해 필요
+
+```
+# 재귀 함수
+def recursive(data):
+    if data < 0:
+        print ("ended")
+    else:
+        print(data)
+        recursive(data - 1)
+        print("returned", data)        
+```
+```
+recursive(4)
+```
+4
+3
+2
+1
+0
+ended
+returned 0
+returned 1
+returned 2
+returned 3
+returned 4
+
+## 3. 자료 구조 스택의 장단점
+* 장점
+ * 구조가 단순해서, 구현이 쉽다.
+ * 데이터 저장/읽기 속도가 빠르다.
+* 단점 (일반적인 스택 구현시)
+ * 데이터 최대 갯수를 미리 정해야 한다.
+  * 파이썬의 경우 재귀 함수는 1000번까지만 호출이 가능함
+ * 저장 공간의 낭비가 발생할 수 있음
+  * 미리 최대 갯수만큼 저장 공간을 확보해야 함
+```
+스택은 단순하고 빠른 성능을 위해 사용되므로, 보통 배열 구조를 활용해서 구현하는 것이 일반적임. 이 경우, 위에서 열거한 단점이 있을 수 있음
+```
+## 4. 파이썬 리스트 기능에서 제공하는 메서드로 스택 사용해보기
+* append(push), pop 메서드 제공
+```
+data_stack = list()
+data_stack.append(1)
+data_stack.append(2)
+```
+```
+data_stack
+```
+[1, 2]
+```
+data_stack.pop()
+```
+2
+## 5. 프로그래밍 연습
+
+연습1: 리스트 변수로 스택을 다루는 pop, push 기능 구현해보기 (pop, push 함수 사용하지 않고 직접 구현해보기)
+```
+stack_list = list()
+def push(data):
+    stack_list.append(data)
+def pop():
+    data = stack_list[-1]
+    del stack_list[-1]
+    return data
+```
+```
+for index in range(10):
+    push(index)
+```
+```
+pop()
+```
+9
+​
