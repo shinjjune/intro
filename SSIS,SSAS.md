@@ -269,3 +269,7 @@ public override void 입력0_ProcessInputRow(입력0Buffer Row)
     }
 }
 ```
+
+
+### AZURE 사용정리 문서파일 : 
+http://www.taeyo.net/Notes/Storage/WindowsAzure%EC%82%AC%EC%9A%A9%EA%B8%B0AtoZ_1%EB%B6%80.pdf
