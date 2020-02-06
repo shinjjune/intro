@@ -51,4 +51,26 @@
      - lowest = num
 4. data_list[num], data_list[lowest] = data_list[lowest], data_list[num]  
 
+```
+def selection_sort(data):
+    for stand in range(len(data) - 1):
+        lowest = stand
+        for index in range(stand + 1, len(data)):
+            if data[lowest] > data[index]:
+                lowest = index
+        data[lowest], data[stand] = data[stand], data[lowest]
+    return data
+```
+```
+import random
 
+data_list = random.sample(range(100), 10)
+```
+```
+selection_sort(data_list)
+```
+[9, 12, 13, 24, 53, 55, 69, 80, 87, 98]
+
+### 4. 알고리즘 분석
+반복문이 두 개 O( 𝑛2 )
+실제로 상세하게 계산하면,  𝑛∗(𝑛−1)/2
