@@ -29,11 +29,14 @@
     * 다양한 정렬 알고리즘 이해를 통해, 동일한 문제에 대해 다양한 알고리즘이 고안될 수 있음을 이해하고, 
     각 알고리즘간 성능 비교를 통해, 알고리즘 성능 분석에 대해서도 이해할 수 있음
 
-### 2. 버블 정렬 (bubble sort) 란?¶
+### 2. 버블 정렬 (bubble sort) 란?
 * 두 인접한 데이터를 비교해서, 앞에 있는 데이터가 뒤에 있는 데이터보다 크면, 자리를 바꾸는 정렬 알고리즘
 
-cf) 직접 눈으로 보면 더 이해가 쉽다: https://visualgo.net/en/sorting
+#### 직접 눈으로 보면 더 이해가 쉽다: https://visualgo.net/en/sorting
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif" width=600/>
+
+> 출처: https://en.wikipedia.org/wiki/Bubble_sort
 
 ### 3. 어떻게 코드로 만들까?
 
