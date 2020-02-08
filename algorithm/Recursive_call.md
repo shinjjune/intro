@@ -291,6 +291,20 @@ f(n)은 f(n-1) + f(n-2) + f(n-3) 과 동일하다는 패턴 찾기<br>
 출처: ACM-ICPC > Regionals > Asia > Korea > Asia Regional - Taejon 2001 
 </div>
 
-
+```
+def func(data):
+    if data == 1:
+        return 1
+    elif data == 2:
+        return 2
+    elif data == 3:
+        return 4
+    
+    return func(data -1) + func(data - 2) + func(data - 3)
+```
+```
+func(5)
+```
+13
 
 
