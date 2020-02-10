@@ -99,12 +99,14 @@ data_list = random.sample(range(100), 10)
 
 qsort(data_list)
 ```
+
 [2, 20, 35, 39, 49, 51, 57, 74, 82, 94]
 
 <div class="alert alert-block alert-warning">
 <strong><font color="blue" size="4em">프로그래밍 연습</font></strong><br>
 위 퀵정렬 코드를 파이썬 list comprehension을 사용해서 더 깔끔하게 작성해보기<br>
 </div>
+
 ```
 def qsort(data):
     if len(data) <= 1:
@@ -127,6 +129,7 @@ qsort(data_list)
 [5, 10, 37, 43, 61, 71, 77, 78, 82, 84]
 
 ### 4. 알고리즘 분석
+
 * <font color='#BF360C'>병합정렬과 유사, 시간복잡도는 O(n log n)</font>
   - 단, 최악의 경우 
     - 맨 처음 pivot이 가장 크거나, 가장 작으면
