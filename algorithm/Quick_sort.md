@@ -126,8 +126,6 @@ qsort(data_list)
 ```
 [5, 10, 37, 43, 61, 71, 77, 78, 82, 84]
 
-
-
 ### 4. 알고리즘 분석
 * <font color='#BF360C'>병합정렬과 유사, 시간복잡도는 O(n log n)</font>
   - 단, 최악의 경우 
@@ -135,6 +133,4 @@ qsort(data_list)
     - 모든 데이터를 비교하는 상황이 나옴
     - O($n^2$)
 <img src="https://www.fun-coding.org/00_Images/quicksortworks.jpg" />
-
-
 
