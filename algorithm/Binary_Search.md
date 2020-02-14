@@ -92,6 +92,10 @@ False
   - <font size=4em>$log_2 n$ = k</font>
   - 빅 오 표기법으로는 k + 1 이 결국 최종 시간 복잡도임 (1이 되었을 때도, 비교연산을 한번 수행)
     - 결국 O($log_2 n$ + 1) 이고, 2와 1, 상수는 삭제 되므로, O($log n$)
+    
+    
+![image](https://user-images.githubusercontent.com/47058441/74533485-0d3b9d00-4f75-11ea-8c9d-f89ba1300597.png)
+
 
 <div class="alert alert-block alert-warning">
 <strong><font color="blue" size="4em">프로그래밍 연습</font></strong><br>
