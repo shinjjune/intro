@@ -83,6 +83,8 @@ binary_search(data_list, 66)
 False
 
 ### 5. 알고리즘 분석
+
+5. 알고리즘 분석
 * n개의 리스트를 매번 2로 나누어 1이 될 때까지 비교연산을 k회 진행
   - <font size=4em>n X $\frac { 1 }{ 2 }$ X $\frac { 1 }{ 2 }$ X $\frac { 1 }{ 2 }$ ... = 1</font>
   - <font size=4em>n X $\frac { 1 }{ 2 }^k$ = 1</font>
