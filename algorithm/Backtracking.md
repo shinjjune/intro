@@ -67,7 +67,10 @@ def solve_n_queens(N):
     return final_result
 
 ```
-
+```
+solve_n_queens(4)
+```
+[[1, 3, 0, 2], [2, 0, 3, 1]]
 
 
 
