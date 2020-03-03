@@ -470,3 +470,153 @@ EX) LCD에 출력할 문자 메세지를 전달, 센서로부터 읽은 값을 �
 * 쉘 스크립트 파일은 실행 권한을 가지고 있어야 함
 * 일반적으로 '파일이름.sh'와 같은 형태로 파일 이름을 작성함
 
+
+### Thread? Pthread
+
+### Pthread 란?
+
+* thread 표준 API
+  * POSIX 스레드 또는 Pthread라고 부름
+* Pthread API
+  * 저수준 API로 100 여개의 함수 제공
+  * 복잡하지만, 유닉스 스시템 핵심 스레딩 라이브러리
+  * 다른 스레딩 솔루션도 결국 Pthread를 기반으로 구현되어 있으므로, 익혀둘 가치가 있음
+
+### Pthread 라이브러리
+
+* <pthread.h> 헤더 파일에 정의
+* 모든 함수는 pthread_ 로 시작
+* 크게 두 가지 그룹
+  * 스레드 관리: 생성, 종료, 조인, 디태치 함수등
+  * 동기화: 뮤텍스등 동기화 관련 함수
+
+* 기본 라이브러리(glibc)와 분리된libpthread 라이브러리에 pthread 구현되어 있으므로 컴파일시 명시적으로   -pthread 옵션 필요
+
+```
+gcc -pthread test.c -0 test
+```
+
+### 스레드 생성
+
+```
+int pthread_create(pthread_t *thread, const pthread_attr_t *attr,
+					void *(*start_routine)(void *), void *arg);
+```
+
+### 스레드 종료
+
+```
+void pthread_exit(void * retval);
+```
+
+### 스레드 조인
+
+```
+int pthread_join(pthread_t thread, void **thread_return);
+```
+
+### 스레드 디태치
+
+* 해당 스레드가 종료될 경우, 즉시 관련 리소스를 해제(free)한다.
+  * pthread_join 를 기다리지 않고, 종료 즉시 리소스를 해제한다.
+
+```
+int pthread_detach(pthread_t thread);
+```
+
+### Pthread 뮤텍스- 상호 배제 기법
+
+* 뮤텍스 선언과 초기화
+
+```
+pthread_mutex_t mutex_lock = PTHREAD_MUTEX_INITIALIZER;
+```
+
+* 뮤텍스 락 걸기/풀기
+
+```
+int pthread_mutex_lock(pthread_mutex_t *mutex);
+int pthread_mutex_unlock(pthread_mutex_t *mutex);
+```
+
+### 메모리와 파일 시스템 관련
+
+* heap 영역에 생성
+* malloc() 함수 -> 동적 메모리 할당
+* free() 함수 -> 해제
+
+### 파일 처리성능 개선 기법 - 메모리에 파일 매핑
+
+* [start+offset] ~ [start + offset + length] 만큼의 물리 메모리 공간을 mapping 할 것을 요청
+
+* 보통 start: NULL 또는 0 사용, offset: mapping되기 원하는 물리 메모리 주소로 지정
+
+* prot 보호 모드 설정
+
+  * PROT_READ(읽기 가능)/ PROT_WRITE(쓰기 가능)/ PROT_EXEC(실행 가능)/ PROT_NONE(접근 불가)
+
+* flags: 메모리 주소 공간 설정
+
+  * MAP_SHARED(다른 프로세스와 공유 가능)/ MAP_PRIVATE(프로세스 내에서만 사용 가능)/ 
+
+    MAP_FIXED(지정된 주소로 공간 지정)
+
+* fd: device file에 대한 file descriptor
+
+### mmap 동작 방식으로 이해하는 실제 메모리 동작 총정리
+
+ 운영체제, 가상 메모리 이해를 기반으로 실제 활용 총정리
+
+ 컴퓨터 공학 이해 없이는 mmap 동작을 이해하기 어려움
+
+1. mmap 실행 시, 가상 메모리 주소에 file 주소 매핑(가상 메모리 이해)
+2. 해당 메모리 접근 시, (요구 페이징, lazy allocation)
+   * 페이지 폴트 인터럽트 발생
+   * OS에서 file Data를 복사해서 물리 메모리 페이지에 넣어줌
+3. 메모리 read시: 해당 물리 페이지 데이터를 읽으면 됨
+4. 메모리 write시: 해당 물리 페이지 데이터 수정 후, 페이지 상태 flag 중 dirty bit 를 1로 수정
+5. 파일 close 시, 물리 페이지 데이터가 file 에 업데이트 됨(성능 개선)
+
+### 파일, 메모리, 그리고 가상 메모리
+
+* 장점
+  * read(), write() 시 반복적인 파일 접근을 방지하여 성능 개선
+  * mapping 된 영역은 파일 처리를 위해 lseek()를 사용하지 않고 간단한 포인터 조작으로 탐색 가능
+* 단점
+  * mmap은 페이지 사이즈 단위로 매핑
+    * 페이지 사이즈 단위의 정수배가 아닌 경우, 한 페이지 정도의 공간 추가 할당 및 남은 공간을 0으로 채워주게 됨
+
+### 파일 처리 성능 개선 기법 - 메모리에 파일 매핑
+
+```
+int munmap(void *addr, size_t length)
+```
+
+* *addr 에 mapping 된 물리메모리 주소를 해제한다.
+* length: mapping 된 메모리의 크기(mmap에서 지정했던 동일 값을 넣음)
+
+```
+int msync(void *start, size_t, int flags);
+```
+
+* start: mmap() 를 통해 리턴 받은 메모리 맵의 시작 주소
+* length: 동기화를 할 길이, 시작 주소로 부터 길이를 지정하면 된다.
+* flags
+  * MS_ASYNC: 비동기 방식, 동기화(Memory-> File) 하라는 명령만 내리고 결과에 관계 없이 다음 코드실행(따라서, 동기화가 완료안된 상태로 다음 코드 실행 가능)
+  * MS_SYNC: 동기 방식, 동기화(Memoery-> File)가 될 때까지 블럭 상태로 대기
+  * MS_INVALIDATE: 현재 메모리 맵을 무효화하고 파일의 데이터로 갱신. 즉 File->Memory
+
+### inode 메타데이터 - stat 함수
+
+```
+int stat(const char *path, struct stat *buf);
+int fstat(int filedes, struct stat *buf);
+```
+
+### Standard Stream(표준 입출력) 과 파일 시스템 콜
+
+* command 로 실행되는 프로세스는 세 가지 스트림을 가지고 있음
+  * 표준 입력 스트림(Standard Input Stream) - stdin
+  * 표준 출력 스트림(Standard Output Stream) - stdout
+  * 오류 출력 스트림(Standard ㄸㄱ객 Stream) - stderr
+* 모든 스트림은 일반적인 plain text로 console에 출력하도록 되어 있음
